@@ -3,6 +3,10 @@
 <title>W3.CSS Template</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Joke</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -19,6 +23,20 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
   
     <!-- Left Column -->
     <div class="w3-third">
+      <div id="response"></div>
+    <script>
+        $(document).ready(function () {
+            $.get("https://v2.jokeapi.dev/joke/Programming?type=single", function (result) {
+                console.log("From jokeAPI: " + JSON.stringify(result));
+                $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
+            });
+        });
+
+        function encodeInput(input) {
+            // You can add your own encoding logic here if needed
+            return input;
+        }
+    </script>
     
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
@@ -66,7 +84,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           <br>
         </div>
       </div><br>
-      <div id="response"></div>
+<!--       <div id="response"></div> -->
            <div id="digit-clock"></div>
       <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
     <script src="https://waph-uc.github.io/clock.js"></script>
@@ -126,12 +144,12 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     <!-- End Left Column -->
     </div>
      
-        <script>
+<!--         <script>
                     $.get("https://v2.jokeapi.dev/joke/Programming?type=single", function (result) {
                         console.log("From jokeAPI: " + JSON.stringify(result));
                         $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
                     })
-       </script>
+       </script> -->
   
     <!-- Right Column -->
     <div class="w3-twothird">
