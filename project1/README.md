@@ -44,9 +44,9 @@ The link to access waph.html is: [https://chekkada.github.io/waph.html](https://
 
 This page link is accessible from the personal website as shown in below screenshot:
 
-![waph.html page link on website](project1/images/waph-html1.png)
+![waph.html page link on website](images/waph-html1.png)
 
-![waph.html page](project1/images/waph-html2.png)
+![waph.html page](images/waph-html2.png)
 
 ## Non-technical requirements
 
@@ -72,7 +72,7 @@ Code for integrating Flag Counter:
 </div>
 ```
 
-![Flag Counter](project1/images/page_tracker.png)
+![Flag Counter](images/page_tracker.png)
 
 
 
@@ -122,7 +122,7 @@ function showhideEmail() {
 
 Screenshot Showing Digital clock, Analog Clock, Show/hide your email:
 
-![Digital clock, Analog Clock, Show/hide your email](project1/images/clock.png)
+![Digital clock, Analog Clock](images/clock.png)
 
 
 ### One more Functionality of my choice
@@ -150,7 +150,7 @@ Source code :
       }
     });
  ```
-![Alert](project1/images/alert.png)
+![Alert](images/alert.png)
 
 ### Joke API
 
@@ -173,7 +173,7 @@ function fetchJoke() {
 fetchJoke();
 setInterval(fetchJoke, 60000);
 ```
-![Joke API ](project1/images/jokeAPI.png)
+![Joke API ](images/jokeAPI.png)
 
 ### Weather API
 
@@ -200,7 +200,7 @@ $.getJSON("https://api.weatherbit.io/v2.0/current?city=cincinnati&key=08d6dd69ba
 
 ```
 
-![ weather API](project1/images/weather.png)
+![ weather API](images/weather.png)
 
 ### Javascript Cookies
 
@@ -247,5 +247,5 @@ if (!lastVisit) {
 window.onload = displayWelcomeMessage;
 
 ```
-![Revisit](project1/images/cookies_time.png)
-![Fisrt visit](project1/images/wlcomecookie.png)
+![Revisit](images/cookies_time.png)
+![Fisrt visit](images/wlcomecookie.png)
