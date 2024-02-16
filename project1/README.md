@@ -34,7 +34,7 @@ Using the name {chekkada.github.io}, I established a new public repository. deve
 
 The link to access my website is: [https://chekkada.github.io/project1/index.html](https://chekkada.github.io/project1/index.html).
 
-![Portfolio Website](project1/images/Portfolio1.png)
+![Portfolio Website](images/Portfolio1.png)
 
 ### "Web Application Programming and Hacking" course and related hands-on projects on waph.html file
 
