@@ -124,6 +124,13 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
     <!-- End Left Column -->
     </div>
+     <div id="response"></div>
+        <script>
+                    $.get("https://v2.jokeapi.dev/joke/Programming?type=single", function (result) {
+                        console.log("From jokeAPI: " + JSON.stringify(result));
+                        $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
+                    })
+       </script>
   
     <!-- Right Column -->
     <div class="w3-twothird">
@@ -243,13 +250,13 @@ various streams 10000+ rows using gretel api. Applied algorithms like Random for
     }
     setInterval(displayTime, 500);
     </script> -->
-   <div id="response"></div>
+<!--    <div id="response"></div>
         <script>
                     $.get("https://v2.jokeapi.dev/joke/Programming?type=single", function (result) {
                         console.log("From jokeAPI: " + JSON.stringify(result));
                         $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
                     })
-       </script>
+       </script> -->
 <footer class="w3-container w3-teal w3-center w3-margin-top">
   <p></p>
   
