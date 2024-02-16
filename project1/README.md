@@ -115,7 +115,7 @@ function showhideEmail() {
         shown = false;
       }
       else {
-        var myemail = "<a href='mailto:sheelada" + "@" + "mail.uc.edu'>sheelada" + "@" + "mail.uc.edu</a>";
+        var myemail = "<a href='mailto:sheelada" + "@" + "mail.uc.edu'>chekkada" + "@" + "mail.uc.edu</a>";
         document.getElementById('email').innerHTML = myemail;
         shown = true;
 ```
