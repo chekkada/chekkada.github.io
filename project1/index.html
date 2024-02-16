@@ -150,6 +150,21 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
                         $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
                     })
        </script> -->
+      <script>
+    // Function to check if it's the first-time visit
+    function checkFirstVisit() {
+      // Check if "firstVisit" key exists in localStorage
+      if (!localStorage.getItem("firstVisit")) {
+        // Display welcome message for the first-time visit
+        alert("Welcome to my homepage!");
+        // Set the "firstVisit" key in localStorage to remember the visit
+        localStorage.setItem("firstVisit", true);
+      }
+    }
+
+    // Call the function to check for the first-time visit
+    checkFirstVisit();
+  </script>
   
     <!-- Right Column -->
     <div class="w3-twothird">
