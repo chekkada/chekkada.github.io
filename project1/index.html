@@ -33,7 +33,27 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <div class="w3-container">
           <p><i class="fa fa-briefcase fa-fw w3-margin-right w3-large w3-text-teal"></i>Student</p>
           <p><i class="fa fa-home fa-fw w3-margin-right w3-large w3-text-teal"></i>Hyderabad, India</p>
-          <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>chekkada@mail.uc.edu</p>
+<!--           <p><i class="fa fa-envelope fa-fw w3-margin-right w3-large w3-text-teal"></i>chekkada@mail.uc.edu</p> -->
+          <p id="email" onclick="showhideEmail()">Show my email</p>
+     <script>
+        var shown = false;
+
+        function showhideEmail() {
+            if (shown) {
+                document.getElementById("email").innerHTML = "Show my email";
+                shown = false;
+            } else {
+                var myemail =
+                    "<a href='mailto:devanaoy" +
+                    "@" +
+                    "ucmail.uc.edu'>devanaoy" +
+                    "@" +
+                    "ucmail.uc.edu</a>";
+                document.getElementById("email").innerHTML = myemail;
+                shown = true;
+            }
+        }
+    </script>
           <p><i class="fa fa-phone fa-fw w3-margin-right w3-large w3-text-teal"></i>123436534</p>
           <hr>
 
