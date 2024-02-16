@@ -109,15 +109,21 @@ var canvas = document.getElementById("analog-clock");
 Source Code for show/hide your email:
 
 ```JS
-function showhideEmail() {
-      if (shown) {
-        document.getElementById('email').innerHTML = "Click here to show my email";
-        shown = false;
-      }
-      else {
-        var myemail = "<a href='mailto:sheelada" + "@" + "mail.uc.edu'>chekkada" + "@" + "mail.uc.edu</a>";
-        document.getElementById('email').innerHTML = myemail;
-        shown = true;
+ function showhideEmail() {
+            if (shown) {
+                document.getElementById("email").innerHTML = "Show my email";
+                shown = false;
+            } else {
+                var myemail =
+                    "<a href='mailto:chekkada" +
+                    "@" +
+                    "ucmail.uc.edu'>chekkada" +
+                    "@" +
+                    "ucmail.uc.edu</a>";
+                document.getElementById("email").innerHTML = myemail;
+                shown = true;
+            }
+        }
 ```
 
 Screenshot Showing Digital clock, Analog Clock, Show/hide your email:
@@ -159,19 +165,15 @@ Integrated the jokeAPI to fetch a new joke every minute and display it on the we
 Source code for Joke API:
 
 ```JS
-function fetchJoke() {
-          $.get("https://v2.jokeapi.dev/joke/Any?type=single", function (result) {
-            console.log("From jokeAPI: " + JSON.stringify(result));
-            if (result && result.joke) {
-              $("#joke").text("Here's a joke for you: " + result.joke);
-            } else {
-              $("#joke").text("Could not retrieve a joke at the moment.");
-            }
-          });
-        }
+$(document).ready(function () {
+            $.get("https://v2.jokeapi.dev/joke/Programming?type=single", function (result) {
+                console.log("From jokeAPI: " + JSON.stringify(result));
+                $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
+            });
+        });
 
-fetchJoke();
-setInterval(fetchJoke, 60000);
+        function encodeInput(input) {
+            return input;
 ```
 ![Joke API ](images/jokeAPI.png)
 
@@ -182,19 +184,31 @@ Integrated the Weatherbit API to fetch current weather information for Cincinnat
 ```JS
 
 $(document).ready(function () {
-// Fetch data from Weatherbit API
-$.getJSON("https://api.weatherbit.io/v2.0/current?city=cincinnati&key=08d6dd69bae245f081687c17710408a2", function (data) {
-  // Extract relevant weather information
-  var temperature = data.data[0].temp;
-  var description = data.data[0].weather.description;
-  var iconCode = data.data[0].weather.icon;
-
-  // Update weather information
-  $("#weather-info").text("Current Temperature: " + temperature + "°C, Weather: " + description);
-
-  //update weather icon
-  $("#weather-icon").attr("src", "https://www.weatherbit.io/static/img/icons/" + iconCode + ".png");
-  $("#weather-icon").attr("alt", description);
+var apiKey = '33ea3b7afa564085948b067ce5c9f0bb'; // Replace 'YOUR_API_KEY' with your actual API key from Weatherbit
+ 
+$.get("https://api.weatherbit.io/v2.0/current", {
+key: apiKey,
+city: 'Cincinnati' // Example city, you can change it to any city you want
+})
+.done(function (data) {
+if (data && data.data && data.data.length > 0) {
+var weatherData = data.data[0];
+var temperature = weatherData.temp;
+var description = weatherData.weather.description;
+var iconCode = weatherData.weather.icon;
+ 
+var iconUrl = "https://www.weatherbit.io/static/img/icons/" + iconCode + ".png";
+ 
+// Display weather information on the webpage
+$("#weather-icon").attr("src", iconUrl);
+$("#weather-details").html("<p>Temperature: " + temperature + "°C</p>" +
+"<p>Description: " + description + "</p>");
+} else {
+$("#weather-info").html("<p>Unable to fetch weather data.</p>");
+}
+})
+.fail(function () {
+$("#weather-info").html("<p>Error occurred while fetching weather data.</p>");
 });
 });
 
@@ -229,22 +243,41 @@ for (var i = 0; i < ca.length; i++) {
 return null;
 }
 
-// Function to display the welcome message
-function displayWelcomeMessage() {
-var lastVisit = getCookie("lastVisit");
-if (!lastVisit) {
-  // First-time visit
-  setCookie("lastVisit", new Date().toISOString(), 30); // Set cookie to expire in 30 days
-  alert("Welcome to my homepage!");
-} else {
-  // Returning visit
-  var lastVisitDate = new Date(lastVisit);
-  alert("Welcome back! Your last visit was " + lastVisitDate.toLocaleString());
-}
-}
+// Function to check if it's the first-time visit
+    function checkFirstVisit() {
+      var isFirstVisit = getCookie("firstVisit");
+      if (!isFirstVisit) {
+        // Display welcome message for the first-time visit
+        alert("Welcome to my homepage!");
+        // Set the cookie to remember the visit for 365 days
+        setCookie("firstVisit", "true", 365);
+      } else {
+        // Display welcome back message for returning visitors
+        var lastVisit = getCookie("lastVisit");
+        alert("Welcome back! Your last visit was " + lastVisit);
+      }
+      // Set the cookie for the current visit
+      setCookie("lastVisit", new Date(), 365);
+    }
 
-// Call the function when the page loads
-window.onload = displayWelcomeMessage;
+    // Call the function to check for the first-time visit
+    checkFirstVisit();
+  </script>
+
+      <script>
+    // Function to check if it's the first-time visit
+    function checkFirstVisit() {
+      // Check if "firstVisit" key exists in localStorage
+      if (!localStorage.getItem("firstVisit")) {
+        // Display welcome message for the first-time visit
+        alert("Welcome to my homepage!");
+        // Set the "firstVisit" key in localStorage to remember the visit
+        localStorage.setItem("firstVisit", true);
+      }
+    }
+
+    // Call the function to check for the first-time visit
+    checkFirstVisit();
 
 ```
 ![Revisit](images/cookies_time.png)
