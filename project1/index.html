@@ -124,7 +124,33 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
     <!-- End Left Column -->
     </div>
+    <div id="countdown-container">
+        <!-- Countdown will be displayed here -->
+        <p id="countdown"></p>
+    </div>
 
+    <script>
+      $(document).ready(function () {
+    // Set the target date for the countdown
+    var targetDate = moment('2024-12-31T23:59:59');
+
+    // Update the countdown every second
+    setInterval(function () {
+        // Calculate the remaining time
+        var now = moment();
+        var duration = moment.duration(targetDate.diff(now));
+        
+        // Display the countdown in the specified format
+        var countdownText = duration.days() + ' days ' +
+                             duration.hours() + ' hours ' +
+                             duration.minutes() + ' minutes ' +
+                             duration.seconds() + ' seconds';
+
+        // Update the HTML element with the countdown
+        $('#countdown').text(countdownText);
+    }, 1000);
+});
+    </script>
     <!-- Right Column -->
     <div class="w3-twothird">
     
