@@ -24,6 +24,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <div class="w3-display-container">
           <img src="images/SrijaHeadshot.jpeg" style="width:50%" alt="Avatar">
           <div class="w3-display-bottomleft w3-container w3-text-black">
+            <div id="digit-clock"></div>
             <div>
             <h2>Durga Srija Chekka</h2>
             </div>
@@ -161,7 +162,13 @@ various streams 10000+ rows using gretel api. Applied algorithms like Random for
 
             drawTime(ctx, radius);
         }
-
+    </script>
+  <script>
+    function displayTime() {
+        document.getElementById('digit-clock').innerHTML = "Current time: " + new Date();
+    }
+    setInterval(displayTime, 500);
+    </script>
 <footer class="w3-container w3-teal w3-center w3-margin-top">
   <p></p>
   
