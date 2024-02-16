@@ -4,9 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Popup Alerts Example</title>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,6 +13,9 @@
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 </style>
+<title>Popup Alerts Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 <body class="w3-light-grey">
 
 <!-- Page Container -->
@@ -78,9 +78,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
     <script src="https://waph-uc.github.io/clock.js"></script>
        <p id="email" onclick="showhideEmail()">Show my email</p>
-       <h1>Popup Alerts Example</h1>
-  
-  <button id="showAlertBtn">Show Alert</button>
+
       <script>
         var shown = false;
 
@@ -132,6 +130,28 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         src="https://s11.flagcounter.com/count2/szVl/bg_FFFFFF/txt_000000/border_000000/columns_2/maxflags_10/viewers_0/labels_1/pageviews_1/flags_0/percent_0/"
         alt="Flag Counter" border="0"></a>
 </div>
+       <h1>Popup Alerts Example</h1>
+  <button id="showAlertBtn">Show Alert</button>
+   <h1>Popup Alerts Example</h1>
+  
+  <button id="showAlertBtn">Show Alert</button> -->
+
+  <script>
+    $(document).ready(function() {
+      $("#showAlertBtn").click(function() {
+        showAlert();
+      });
+
+      function showAlert() {
+        Swal.fire({
+          title: 'Hello!',
+          text: 'This is a popup alert using SweetAlert2 and jQuery.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        });
+      }
+    });
+  </script>
 
     <!-- End Left Column -->
     </div>
@@ -156,26 +176,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
                         $("#response").html("A programming joke of the day: " + encodeInput(result.joke));
                     })
        </script> -->
-<!--         <h1>Popup Alerts Example</h1>
-  
-  <button id="showAlertBtn">Show Alert</button> -->
-
-  <script>
-    $(document).ready(function() {
-      $("#showAlertBtn").click(function() {
-        showAlert();
-      });
-
-      function showAlert() {
-        Swal.fire({
-          title: 'Hello!',
-          text: 'This is a popup alert using SweetAlert2 and jQuery.',
-          icon: 'success',
-          confirmButtonText: 'OK'
-        });
-      }
-    });
-  </script>
+<!--        
       <script>
     // Function to set a cookie with a specified name, value, and expiration days
     function setCookie(name, value, days) {
