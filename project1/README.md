@@ -8,7 +8,7 @@
 
 **Short-bio**: Durga Srija Chekka has keen interests in cloud computing and Machine learning.
 
-![Srija'sHeadshot](images/Srija'sHeadshot.jpeg)
+![Srija'sHeadshot](/images/SrijaHeadshot.jpeg)
 
 ## Repository Information
 
