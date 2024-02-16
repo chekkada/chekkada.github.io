@@ -70,6 +70,26 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
       <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
     <script src="https://waph-uc.github.io/clock.js"></script>
        <p id="email" onclick="showhideEmail()">Show my email</p>
+      <script>
+        var shown = false;
+
+        function showhideEmail() {
+            if (shown) {
+                document.getElementById("email").innerHTML = "Show my email";
+                shown = false;
+            } else {
+                var myemail =
+                    "<a href='mailto:chekkada" +
+                    "@" +
+                    "ucmail.uc.edu'>chekkada" +
+                    "@" +
+                    "ucmail.uc.edu</a>";
+                document.getElementById("email").innerHTML = myemail;
+                shown = true;
+            }
+        }
+    </script>
+
       <a href="https://chekkada.github.io/waph.html">Click here to view waph.html</a>
     <script>
         var canvas = document.getElementById("analog-clock");
@@ -167,7 +187,7 @@ various streams 10000+ rows using gretel api. Applied algorithms like Random for
           <p>Intermediate</p><br>
         </div>
       </div>
-         <script>
+<!--          <script>
         var shown = false;
 
         function showhideEmail() {
@@ -186,7 +206,7 @@ various streams 10000+ rows using gretel api. Applied algorithms like Random for
             }
         }
     </script>
-
+ -->
     <!-- End Right Column -->
     </div>
     
