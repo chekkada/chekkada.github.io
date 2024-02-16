@@ -34,7 +34,7 @@ Using the name {chekkada.github.io}, I established a new public repository. deve
 
 The link to access my website is: [https://chekkada.github.io/project1/index.html](https://chekkada.github.io/project1/index.html).
 
-![Portfolio Website](images/screenshot1.png)
+![Portfolio Website](project1/images/Portfolio1.png)
 
 ### "Web Application Programming and Hacking" course and related hands-on projects on waph.html file
 
@@ -44,9 +44,9 @@ The link to access waph.html is: [https://chekkada.github.io/waph.html](https://
 
 This page link is accessible from the personal website as shown in below screenshot:
 
-![waph.html page link on website](images/screenshot2.png)
+![waph.html page link on website](project1/images/waph-html1.png)
 
-![waph.html page](images/screenshot3.png)
+![waph.html page](project1/images/waph-html2.png)
 
 ## Non-technical requirements
 
@@ -72,7 +72,7 @@ Code for integrating Flag Counter:
 </div>
 ```
 
-![Flag Counter](images/screenshot4.png)
+![Flag Counter](project1/images/page_tracker.png)
 
 
 
@@ -122,49 +122,35 @@ function showhideEmail() {
 
 Screenshot Showing Digital clock, Analog Clock, Show/hide your email:
 
-![Digital clock, Analog Clock, Show/hide your email](images/screenshot5.png)
+![Digital clock, Analog Clock, Show/hide your email](project1/images/clock.png)
 
 
 ### One more Functionality of my choice
 
 Combining jQuery with the SweetAlert2 Library for Popup Alerts
 html
-Source code for Haacker news Api:
+Source code :
 ```JS
-<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 ```
  ```JS
-new Vue({
-el: '#app',
-data: {
-  articles: []
-},
-mounted() {
-  this.fetchArticles();
-},
-methods: {
-  fetchArticles() {
-    fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
-      .then(response => response.json())
-      .then(ids => {
-        // Take only the first 10 article IDs
-        ids = ids.slice(0, 5);
-        // Fetch details of each article
-        Promise.all(ids.map(id =>
-          fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`)
-            .then(response => response.json())
-        ))
-          .then(articles => {
-            // Update articles data
-            this.articles = articles;
-          });
-      })
-      .catch(error => console.error('Error fetching articles:', error));
-  }
-}
-});
+    $(document).ready(function() {
+      $("#showAlertBtn").click(function() {
+        showAlert();
+      });
+
+      function showAlert() {
+        Swal.fire({
+          title: 'Hello!',
+          text: 'This is a popup alert using SweetAlert2 and jQuery.',
+          icon: 'success',
+          confirmButtonText: 'OK'
+        });
+      }
+    });
  ```
-![5 Hacker news trending articles](images/screenshot6.png)
+![Alert](project1/images/alert.png)
 
 ### Joke API
 
@@ -187,6 +173,7 @@ function fetchJoke() {
 fetchJoke();
 setInterval(fetchJoke, 60000);
 ```
+![Joke API ](project1/images/jokeAPI.png)
 
 ### Weather API
 
@@ -213,7 +200,7 @@ $.getJSON("https://api.weatherbit.io/v2.0/current?city=cincinnati&key=08d6dd69ba
 
 ```
 
-![Joke API and weather API](images/screenshot7.png)
+![ weather API](project1/images/weather.png)
 
 ### Javascript Cookies
 
@@ -260,5 +247,5 @@ if (!lastVisit) {
 window.onload = displayWelcomeMessage;
 
 ```
-![Fisrt visit](images/screenshot8.png)
-![revisit cookies](images/screenshot9.png)
+![Revisit](project1/images/cookies_time.png)
+![Fisrt visit](project1/images/wlcomecookie.png)
