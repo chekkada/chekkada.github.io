@@ -140,6 +140,27 @@ various streams 10000+ rows using gretel api. Applied algorithms like Random for
   
   <!-- End Page Container -->
 </div>
+  </div>
+    <canvas id="analog-clock" width="150" height="150" style="background-color:#999"></canvas>
+    <script src="https://waph-uc.github.io/clock.js"></script>
+    <script>
+        var canvas = document.getElementById("analog-clock");
+
+        var ctx = canvas.getContext("2d");
+
+        var radius = canvas.height / 2;
+
+        ctx.translate(radius, radius);
+        radius = radius * 0.9;
+
+        setInterval(drawClock, 1000);
+        function drawClock() {
+            drawFace(ctx, radius);
+
+            drawNumbers(ctx, radius);
+
+            drawTime(ctx, radius);
+        }
 
 <footer class="w3-container w3-teal w3-center w3-margin-top">
   <p></p>
