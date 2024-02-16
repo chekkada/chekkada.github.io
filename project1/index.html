@@ -283,39 +283,39 @@ various streams 10000+ rows using gretel api. Applied algorithms like Random for
 <img id="weather-icon" src="" alt="Weather Icon">
 <div id="weather-details"></div>
 </div>
-<script>
-$(document).ready(function () {
-var apiKey = '33ea3b7afa564085948b067ce5c9f0bb'; // Replace 'YOUR_API_KEY' with your actual API key from Weatherbit
+// <script>
+// $(document).ready(function () {
+// var apiKey = '33ea3b7afa564085948b067ce5c9f0bb'; // Replace 'YOUR_API_KEY' with your actual API key from Weatherbit
  
-// Make a GET request to Weatherbit API for current weather data
-$.get("https://api.weatherbit.io/v2.0/current", {
-key: apiKey,
-city: 'Cincinnati' // Example city, you can change it to any city you want
-})
-.done(function (data) {
-// Check if the request was successful and data is available
-if (data && data.data && data.data.length > 0) {
-var weatherData = data.data[0];
-var temperature = weatherData.temp;
-var description = weatherData.weather.description;
-var iconCode = weatherData.weather.icon;
+// // Make a GET request to Weatherbit API for current weather data
+// $.get("https://api.weatherbit.io/v2.0/current", {
+// key: apiKey,
+// city: 'Cincinnati' // Example city, you can change it to any city you want
+// })
+// .done(function (data) {
+// // Check if the request was successful and data is available
+// if (data && data.data && data.data.length > 0) {
+// var weatherData = data.data[0];
+// var temperature = weatherData.temp;
+// var description = weatherData.weather.description;
+// var iconCode = weatherData.weather.icon;
  
-// Construct the URL for the weather icon
-var iconUrl = "https://www.weatherbit.io/static/img/icons/" + iconCode + ".png";
+// // Construct the URL for the weather icon
+// var iconUrl = "https://www.weatherbit.io/static/img/icons/" + iconCode + ".png";
  
-// Display weather information on the webpage
-$("#weather-icon").attr("src", iconUrl);
-$("#weather-details").html("<p>Temperature: " + temperature + "°C</p>" +
-"<p>Description: " + description + "</p>");
-} else {
-$("#weather-info").html("<p>Unable to fetch weather data.</p>");
-}
-})
-.fail(function () {
-$("#weather-info").html("<p>Error occurred while fetching weather data.</p>");
-});
-});
-</script>
+// // Display weather information on the webpage
+// $("#weather-icon").attr("src", iconUrl);
+// $("#weather-details").html("<p>Temperature: " + temperature + "°C</p>" +
+// "<p>Description: " + description + "</p>");
+// } else {
+// $("#weather-info").html("<p>Unable to fetch weather data.</p>");
+// }
+// })
+// .fail(function () {
+// $("#weather-info").html("<p>Error occurred while fetching weather data.</p>");
+// });
+// });
+// </script>
 </div>
 <!--          <script>
         var shown = false;
