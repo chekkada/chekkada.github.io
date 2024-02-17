@@ -281,4 +281,4 @@ return null;
 
 ```
 ![Revisit](images/cookies_time.png)
-![Fisrt visit](images/wlcomecookie.png)
+![Fisrt visit](images/welcomecookie.jpeg)
